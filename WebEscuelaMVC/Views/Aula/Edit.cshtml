@@ -1,0 +1,43 @@
+﻿
+@model WebEscuelaMVC.Models.Aula
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        <h2> Editar</h2>
+        @using (Html.BeginForm("Edit", "Aula", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+            <p>
+                @Html.LabelFor(model => model.Id):
+                @Html.EditorFor(model => model.Id)
+                @Html.ValidationMessageFor(model => model.Id)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Numero):
+                @Html.EditorFor(model => model.Numero)
+                @Html.ValidationMessageFor(model => model.Numero)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Estado):
+                @Html.EditorFor(model => model.Estado)
+                @Html.ValidationMessageFor(model => model.Estado)
+            </p>
+            <p>
+                <input type="submit" value="Edit" />
+                @Html.ActionLink("Edit", "Edit")
+            </p>
+            @Html.ActionLink("Back to List", "Index")
+        }
+
+
+    </div>
+    
+</body>
+</html>

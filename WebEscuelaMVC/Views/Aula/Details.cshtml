@@ -1,0 +1,44 @@
+﻿
+@model WebEscuelaMVC.Models.Aula
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    @using (Html.BeginForm("Details", "Aula", FormMethod.Get))
+    {
+
+
+        <legend>Detalle del Aula</legend>
+
+        <div>
+            @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Id)
+        </div>
+        <div>
+            @Html.DisplayNameFor(model => model.Numero)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Numero)
+        </div>
+
+        <div>
+            @Html.DisplayNameFor(model => model.Estado)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Estado)
+        </div>
+
+
+        <p>
+            @Html.ActionLink("Go to index", "Index", "Aula")
+        </p>
+    }
+    </body>
+</html>
